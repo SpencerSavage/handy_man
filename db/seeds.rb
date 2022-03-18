@@ -4,20 +4,20 @@ Worker.delete_all
 
 5.times do 
   worker = Worker.create(
-    fname: Faker::TvShows::RuPaul.queen
-    lname: Faker::TvShows::RuPaul.queen
+    fname: Faker::TvShows::RuPaul.queen,
+    lname: Faker::TvShows::RuPaul.queen,
     phone: '208-867-5309'
   )
   3.times do
     service = Service.create(
       sname: Faker::TvShows::RuPaul.queen,
-      stype: 'Mechanic'
+      stype: 'Mechanic',
       worker_id: worker.id
     )
     
     Comment.create(
       subject: Faker::Creature::Cat.name,
-      body:Faker::TvShows::RuPaul.queen
+      body:Faker::TvShows::RuPaul.queen,
       service_id: service.id
     )
   end 
