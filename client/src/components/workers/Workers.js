@@ -5,6 +5,7 @@ import WorkerForm from './WorkerForm';
 
 const Workers = () => {
   const [workers, setWorkers] = useState([])
+  
 
   useEffect( () => {
     axios.get('/api/workers')
@@ -22,7 +23,7 @@ const Workers = () => {
     axios.put(`/api/workers/${id}`, {worker})
       .then( res => {
         const newUpdatedWorker = workers.map( w => {
-          if (w.id == id) {
+          if (w.id === id) {
             return res.data
           }
             return w

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const ServiceForm = ({ addService, id, fname, lname, phone, updateService, setEdit }) => {
-    const [service, setService] = useState({ id: '', fname: '' , lname: '', phone: 0})
+const ServiceForm = ({ addService, id, sname, stype, location, updateService, setEdit }) => {
+    const [service, setService] = useState({sname:'', stype:'', location:''})
 
     useEffect( () => {
         if (id) {
-            setService({ id, fname, phone })
+            setService({ id, sname, stype, location })
         }
     }, [])
 
@@ -17,32 +17,32 @@ const ServiceForm = ({ addService, id, fname, lname, phone, updateService, setEd
         } else {
         addService(service)
         }
-        setService({ id: '', fname: '', lname: '', phone: ''})
+        setService({ id: '', sname: '', stype: '', location: ''})
     }
 
     return (
         <>
+        <h3> { id ? 'Update Service' : 'Create Service'}</h3>
          <form onSubmit={handleSubmit}>
-            <label>Type:</label>
+            <label>Name:</label>
             <input
-                name='name'
-                value={service.name}
-                onChange={(e) => setService({ ...service, name: e.target.value})}
+                name='sname'
+                value={service.sname}
+                onChange={(e) => setService({ ...service, sname: e.target.value})}
                 required 
                 />
-             <label>name:</label>
+             <label>Type:</label>
              <input
-                name='phone'
-                value={service.mins}
-                onChange={(e) => setService({ ...service, phone: e.target.value})}
+                name='stype'
+                value={service.stype}
+                onChange={(e) => setService({ ...service, stype: e.target.value})}
                 required 
-                type="number"
                 />
-             <label>Desc:</label>
+             <label>Location:</label>
              <textarea
-                name='name'
-                value={service.name}
-                onChange={(e) => setService({ ...service, name: e.target.value})}
+                name='location'
+                value={service.location}
+                onChange={(e) => setService({ ...service, location: e.target.value})}
                 required
             ></textarea>
             <button type="submit">Submit</button>
