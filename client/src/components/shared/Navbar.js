@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom';
 
-
-
 const Navbar = () => (
   <nav>
     <ul>
-    <Link to='/'>
+      <Link to='/'>
         <li>
           HandyMan
         </li>
