@@ -1,11 +1,11 @@
-import ServiceShow from './ServiceShow';
+import Service from './Service';
 
 const ServiceList = ({ services, workerId, deleteService, updateService }) => {
  return (
     <>
      { services.map( s =>
        <>
-            <ServiceShow
+            <Service
           {...s}
           workerId={workerId}
           deleteService={deleteService}

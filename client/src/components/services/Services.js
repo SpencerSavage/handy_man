@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ServiceForm from './ServiceForm';
 import ServiceList from './ServiceList';
-import Service from './service';
+import Service from './Service';
 
 const Services = ({ workerId }) => {
 const [services, setServices] = useState([])
