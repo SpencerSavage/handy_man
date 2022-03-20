@@ -1,5 +1,6 @@
 import { useState } from "react";
 import WorkerForm from "./WorkerForm";
+import { Link } from "react-router-dom";
 
 const Worker = ({id, fname, lname, phone, updateWorker, deleteWorker}) => {
   const [editing, setEdit] = useState(false)
@@ -32,9 +33,12 @@ const Worker = ({id, fname, lname, phone, updateWorker, deleteWorker}) => {
           <button onClick={() => deleteWorker(id)}>
             Delete
           </button>
+          <Link to={`/workers/${id}/services`}>
           <button>
             Services 
           </button>
+          </Link>
+
         </>
       }
       

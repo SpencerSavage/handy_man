@@ -36,7 +36,7 @@ end
 
 private
   def service_params
-      params.require(:service).permit(:sname :stype)
+      params.require(:service).permit(:sname, :stype, :location)
   end
 
   def set_worker
