@@ -12,7 +12,7 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = @service.comments.new(comments_params)
-    if comment.save
+    if @comment.save
        render json: @comment
     else
        render json: { errors: @comment.errors }, status: :unprocessable_entity
