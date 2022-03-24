@@ -1,10 +1,11 @@
+import { link } from 'react-router-dom';
 import Comment from './Comment';
 
-const CommentList = ({ comments, updateComment, deletComment }) => (
+const CommentList = ({ comments, updateComment, deleteComment }) => (
   <>
-    { comments.map( n=> 
+    { comments.map( c => 
       <Comment
-        key={comments.id}
+        key={c.id}
         {...c}
         updateComment={updateComment}
         deleteComment={deleteComment}

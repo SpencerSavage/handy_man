@@ -12,6 +12,7 @@ Worker.delete_all
     service = Service.create(
       sname: Faker::TvShows::RuPaul.queen,
       stype: 'Mechanic',
+      location: Faker::Address.city,
       worker_id: worker.id
     )
     
