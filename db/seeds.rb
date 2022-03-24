@@ -24,13 +24,13 @@ Worker.delete_all
   end 
 end
 
-puts 'Data seeded'
-Service.all.each do |service|
-  puts "#{service.sname} #{service.stype}"
-end
-Worker.all.each do |worker|
-  puts "#{worker.fname} #{worker.lname}"
-end
+# puts 'Data seeded'
+# Service.all.each do |service|
+#   puts "#{service.sname} #{service.stype}"
+# end
+# Worker.all.each do |worker|
+#   puts "#{worker.fname} #{worker.lname}"
+# end
 
 # puts "Number of Billboards: #{Billboard.all.count}"
 # Billboard.all.each do |billboard|  

@@ -7,7 +7,7 @@ const Service = ({ id, sname, stype, location, updateService, deleteService }) =
 
     return (
         <>
-            <h2>{id}</h2>
+            
             <h3>{sname}</h3>
             <h3>{stype}</h3>
             <h3>{location}</h3>
