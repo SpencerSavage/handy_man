@@ -4,24 +4,32 @@ Worker.delete_all
 
 5.times do 
   worker = Worker.create(
-    fname: Faker::TvShows::RuPaul.queen,
-    lname: Faker::TvShows::RuPaul.queen,
+    fname: Faker::Creature::Cat.name,
+    lname: Faker::TvShows::StarTrek.character,
     phone: '208-867-5309'
   )
   3.times do
     service = Service.create(
-      sname: Faker::TvShows::RuPaul.queen,
-      stype: 'Mechanic',
-      location: Faker::Address.city,
+      sname: Faker::Construction.subcontract_category,
+      stype: Faker::Construction.trade,
+      location: Faker::Address.street_address,
       worker_id: worker.id
     )
     
     Comment.create(
-      subject: Faker::Creature::Cat.name,
-      body:Faker::TvShows::RuPaul.queen,
+      subject: Faker::Job.key_skill,
+      body:Faker::Lorem.paragraph(sentence_count: 2),
       service_id: service.id
     )
   end 
+end
+
+puts 'Data seeded'
+Service.all.each do |service|
+  puts "#{service.sname} #{service.stype}"
+end
+Worker.all.each do |worker|
+  puts "#{worker.fname} #{worker.lname}"
 end
 
 # puts "Number of Billboards: #{Billboard.all.count}"

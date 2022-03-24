@@ -5,7 +5,7 @@ import ServiceList from './ServiceList';
 import {useParams} from 'react-router-dom';
 
 
-const Services = ({}) => {
+const Services = () => {
 
     const {workerId} = useParams()
     const [services, setServices] = useState([])

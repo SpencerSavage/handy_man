@@ -1,22 +1,19 @@
 import Service from './Service';
 
-const ServiceList = ({ services, deleteService, updateService }) => {
- return (
+const ServiceList = ({ services, deleteService, updateService }) => (
+ 
     <>
      { services.map( s =>
-       <>
+       
           <Service
           key={s.id}
-          value={s.sname}
           {...s}
 
           deleteService={deleteService}
           updateService={updateService}
           />
-        </>
      )}
    </>
-  )
-} 
+)
 
 export default ServiceList;
