@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import ServiceForm from "./ServiceForm"
+import ServiceForm from "./ServiceForm";
+import { Link } from 'react-router-dom';
 
 const Service = ({ id, sname, stype, location, updateService, deleteService }) => {
     const [editing, setEdit] = useState(false)
@@ -28,7 +29,13 @@ const Service = ({ id, sname, stype, location, updateService, deleteService }) =
 
         }
             <button onClick ={ () => deleteService(id) }>Delete</button>
+            <Link to={`/services/${id}/comments`}>
+          <button>
+            Comments 
+          </button>
+          </Link>
         </>
+         
 
     )
 }
