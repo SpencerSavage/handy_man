@@ -11,7 +11,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    @comment = @service.comments.new(comment_params)
+    @comment = @service.comments.new(comments_params)
     if comment.save
        render json: @comment
     else
